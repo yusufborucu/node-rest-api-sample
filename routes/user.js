@@ -54,7 +54,7 @@ router.put('/:id', async (req, res) => {
   const id = req.params.id
   const data = req.body
 
-  const user = await User.findByIdAndUpdate(id, data, { upsert: true })
+  const user = await User.findByIdAndUpdate(id, data, { new: true })
 
   res.status(200).json({
     status: true,
